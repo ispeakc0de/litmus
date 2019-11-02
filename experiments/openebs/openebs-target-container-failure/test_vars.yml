@@ -1,0 +1,12 @@
+c_experiment: openebs-target-failure
+openebs_ns: "{{ lookup('env','OPENEBS_NAMESPACE') }}"
+a_ns: "{{ lookup('env','APP_NAMESPACE') }}"
+a_label: "{{ lookup('env','APP_LABEL') }}"
+a_pvc: "{{ lookup('env','APP_PVC') }}"
+liveness_label: "{{ lookup('env','LIVENESS_APP_LABEL') }}"
+liveness_namespace: "{{ lookup('env','LIVENESS_APP_NAMESPACE') }}"
+data_persistence: "{{ lookup('env','DATA_PERSISTENCE') }}"
+target_container: "{{ lookup('env','TARGET_CONTAINER') }}"
+chaos_duration: 120
+deploy_type: "{{ lookup('env','DEPLOY_TYPE') }}"
+cri: "{{ lookup('env','CONTAINER_RUNTIME') }}"

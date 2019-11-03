@@ -1,1 +1,4 @@
 pool_label: "app=cstor-pool"
+jiva_controller_pod_suffix: "ctrl"
+jiva_controller_container_suffix: "con"
+pumba_label: "app=pumba"

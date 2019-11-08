@@ -4,6 +4,20 @@
     experiments listed in the chaosengine
 -   To learn more about the chaosengine & chaosexperiment resources, see [chaos operator](https://github.com/litmuschaos/chaos-operator)
 
+<table>
+<tr>
+<td> How to override chaosexperiments env variables from chaosengine <a href="#1"> click here </a> </td>
+</tr>
+<tr><
+<td> How to delete completed/stale jobs after execution of experiment <a href="#2"> click here </a> </td>
+</tr>
+<tr>
+<td>  How to override executor and exporter image from chaosengine <a href="#3"> click here </a> </td>
+</tr>
+</table>
+
+<div id="1">
+
 ### How to Override ChaosExperiment defaults
 
 -   To override the ENV variables in the chaos experiment CRs, perform one of the below steps before applying the manifest:
@@ -64,8 +78,11 @@
           - name: TARGET_CONTAINER   <------ ADD HERE  
             value: jackma
     ```
-    
-### How to Delete stale / completed jobs after chaosExperiment Execution
+</div>
+
+<div id="2">
+
+### How to Delete stale/completed jobs after chaosExperiment Execution
 
 -   To ensure the completed experiment jobs are removed, set `spec.jobCleanupPolicy` to `delete`
 
@@ -89,7 +106,8 @@
             - name: FORCE
               value: "true"
     ```
-    
+    </div>
+
 ### How to Override Executor and Exporter image
 
 -   To provide a chaos executor (runner) & exporter (monitor) of choice, provide the image names (in the form registry/user/image:tag) in the chaosEngine as shown below. The defaults at this point correspond to the litmuschaos CI images in dockerhub:

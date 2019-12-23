@@ -83,7 +83,7 @@
         set_fact:
           app_container: "{{ container.stdout }}"
 
-      when: app_container is undefined
+      when: app_container is undefined or app_container == ''
 
     - name: Record the pumba pod on app node
       shell: >
@@ -101,6 +101,17 @@
       args:
         executable: /bin/bash
       register: restartCnt_prev
+
+    - name: Check for pumba container to be in running state
+      shell: >
+        kubectl get pod -n {{ namespace }}  -l app=pumba --no-headers
+        -o jsonpath='{.items[*].status.containerStatuses[*].ready}' | tr ' ' '\n' | uniq
+      args:
+        executable: /bin/bash
+      register: containerStatus
+      until: "containerStatus.stdout == 'true'"
+      delay: 2
+      retries: 60
 
     - name: Force kill the application pod using pumba
       shell: >

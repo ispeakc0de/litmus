@@ -42,7 +42,7 @@ ansible-runner-build:
 	@echo "------------------"
 	@echo "--> Build ansible-runner image" 
 	@echo "------------------"
-	sudo docker build . -f build/ansible-runner/Dockerfile -t litmuschaos/ansible-runner:ci
+	sudo docker build . -f build/ansible-runner/Dockerfile -t shubh214/ansible-runner:ci
 
 .PHONY: push
 push: ansible-runner-push

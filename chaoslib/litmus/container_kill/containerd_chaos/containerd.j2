@@ -18,6 +18,8 @@ spec:
       # Name of the application pod
       - name: APP_POD
         value: "{{ app_pod }}"
+      - name: APP_NS
+        value: "{{ namespace }}"
       - name: APP_CONTAINER
         value: "{{ app_container }}"
       - name: TOTAL_CHAOS_DURATION
@@ -42,7 +44,7 @@ spec:
                 fieldPath: metadata.name
     name: containerd-chaos
     command: ["/bin/bash"]
-    args: ["-c", "bash crictl-kill.sh"]
+    args: ["-c", "./experiments/container-kill"]
     volumeMounts:
       - name: cri-socket
         mountPath: "{{ container_path }}"

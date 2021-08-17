@@ -5,6 +5,7 @@ It supports four types: `cmdProbe`, `k8sProbe`, `httpProbe`, and `promProbe`.
 ### Probe Modes
 
 The probes can be set up to run in five different modes. Which can be tuned via `mode` ENV. 
+
 - `SOT`: Executed at the Start of the Test as a pre-chaos check
 - `EOT`: Executed at the End of the Test as a post-chaos check
 - `Edge`: Executed both, before and after the chaos
@@ -13,7 +14,7 @@ The probes can be set up to run in five different modes. Which can be tuned via 
 
 Use the following example to tune this:
 
-[embedmd]:# (https://raw.githubusercontent.com/litmuschaos/litmus/master/mkdocs/docs/experiments/chaos-resources/probes/common/probe-modes.yaml yaml)
+[embedmd]:# (https://raw.githubusercontent.com/litmuschaos/litmus/master/mkdocs/docs/experiments/concepts/chaos-resources/probes/common/probe-modes.yaml yaml)
 ```yaml
 # contains the common attributes or run properties
 apiVersion: litmuschaos.io/v1alpha1
@@ -55,6 +56,7 @@ spec:
 ### Run Properties
 
 All probes share some common attributes. Which can be tuned via `runProperties` ENV.
+
 - `probeTimeout`: Represents the time limit for the probe to execute the check specified and return the expected data.
 - `retry`: The number of times a check is re-run upon failure in the first attempt before declaring the probe status as failed.
 - `interval`: The period between subsequent retries
@@ -62,7 +64,7 @@ All probes share some common attributes. Which can be tuned via `runProperties` 
 
 Use the following example to tune this:
 
-[embedmd]:# (https://raw.githubusercontent.com/litmuschaos/litmus/master/mkdocs/docs/experiments/chaos-resources/probes/common/runproperties.yaml yaml)
+[embedmd]:# (https://raw.githubusercontent.com/litmuschaos/litmus/master/mkdocs/docs/experiments/concepts/chaos-resources/probes/common/runproperties.yaml yaml)
 ```yaml
 # contains the common attributes or run properties
 apiVersion: litmuschaos.io/v1alpha1
@@ -112,7 +114,7 @@ It Represents the initial waiting time interval for the probes. It can be tuned 
 
 Use the following example to tune this:
 
-[embedmd]:# (https://raw.githubusercontent.com/litmuschaos/litmus/master/mkdocs/docs/experiments/chaos-resources/probes/common/initial-delay-seconds.yaml yaml)
+[embedmd]:# (https://raw.githubusercontent.com/litmuschaos/litmus/master/mkdocs/docs/experiments/concepts/chaos-resources/probes/common/initial-delay-seconds.yaml yaml)
 ```yaml
 # contains the initial delay seconds for the probes
 apiVersion: litmuschaos.io/v1alpha1
@@ -159,7 +161,7 @@ It supports boolean values. The default value is `false`.
 
 Use the following example to tune this:
 
-[embedmd]:# (https://raw.githubusercontent.com/litmuschaos/litmus/master/mkdocs/docs/experiments/chaos-resources/probes/common/stop-on-failure.yaml yaml)
+[embedmd]:# (https://raw.githubusercontent.com/litmuschaos/litmus/master/mkdocs/docs/experiments/concepts/chaos-resources/probes/common/stop-on-failure.yaml yaml)
 ```yaml
 # contains the flag to stop/continue experiment based on the specified flag
 apiVersion: litmuschaos.io/v1alpha1
@@ -202,12 +204,12 @@ spec:
 
 ### Probe Chaining
 
-Probe chaining enables reuse of probe a result (represented by the template function `{{ .&gt;probeName&lt;.probeArtifact.Register}})` in subsequent "downstream" probes defined in the ChaosEngine. 
+Probe chaining enables reuse of probe a result (represented by the template function `{{ .<probeName>.probeArtifact.Register}})` in subsequent "downstream" probes defined in the ChaosEngine. 
 `Note`: The order of execution of probes in the experiment depends purely on the order in which they are defined in the ChaosEngine.
 
 Use the following example to tune this:
 
-[embedmd]:# (https://raw.githubusercontent.com/litmuschaos/litmus/master/mkdocs/docs/experiments/chaos-resources/probes/common/probe-chaining.yaml yaml)
+[embedmd]:# (https://raw.githubusercontent.com/litmuschaos/litmus/master/mkdocs/docs/experiments/concepts/chaos-resources/probes/common/probe-chaining.yaml yaml)
 ```yaml
 # chaining enables reuse of probe's result (represented by the template function {{ <probeName>.probeArtifact.Register}}) 
 #-- in subsequent "downstream" probes defined in the ChaosEngine.

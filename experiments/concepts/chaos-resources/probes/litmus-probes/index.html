@@ -2460,6 +2460,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#equal-and-notequal-criteria" class="md-nav__link">
+    Equal and NotEqual criteria:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contains-criteria" class="md-nav__link">
+    Contains criteria:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matches-and-notmatches-criteria" class="md-nav__link">
+    Matches and NotMatches criteria:
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3101,6 +3122,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#equal-and-notequal-criteria" class="md-nav__link">
+    Equal and NotEqual criteria:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contains-criteria" class="md-nav__link">
+    Contains criteria:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matches-and-notmatches-criteria" class="md-nav__link">
+    Matches and NotMatches criteria:
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3347,33 +3389,67 @@ It supports boolean values. The default value is <code>false</code>.</p>
 <td> Float &amp; Int type: {&gt;,&lt;.&lt;=,&gt;=,==,!=,oneOf,between}, String type: {equal, notEqual, contains, matches, notMatches, oneOf} </td>
 </tr>
 <tr>
-<th>Notes</th>
-<td>The <code>.criteria</code> the criteria, which should to be followed by the actual and expected probe outputs/td&gt;
-</tr>
-</table></p>
-<p><table>
-<tr>
-<th>Field</th>
-<td><code>.value</code></td>
-</tr>
-<tr>
-<th>Description</th>
-<td>Flag to hold the probe's expected value, which should follow the specified criteria</td>
-</tr>
-<tr>
-<th>Type</th>
-<td>Mandatory</td>
-</tr>
-<tr>
-<th>Range</th>
-<td> value can be of int, float, string, slice type</td>
-</tr>
-<tr>
-<th>Notes</th>
-<td>The <code>.value</code> hold the probe's expected value, which should follow the specified criteria/td&gt;
-</tr>
-</table></p>
+<th>Notes</th></p>
 </details>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+    <td>The <code>.criteria</code> the criteria, which should to be followed by the actual and expected probe outputs/td&gt;
+=======
+    <td>The <code>.criteria</code> holds the criteria, which should to be followed by the actual and expected probe outputs </td></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>cmd-probe
+    </tr>
+    </table></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;table&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;th&gt;</span>Field<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;td&gt;&lt;code&gt;</span>.value<span class="nt">&lt;/code&gt;&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;th&gt;</span>Description<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;td&gt;</span>Flag to hold the probe&#39;s expected value, which should follow the specified criteria<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;th&gt;</span>Type<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;td&gt;</span>Mandatory<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;th&gt;</span>Range<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;td&gt;</span> value can be of int, float, string, slice type<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;th&gt;</span>Notes<span class="nt">&lt;/th&gt;</span>
+</code></pre></div>
+
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+    <td>The <code>.value</code> hold the probe's expected value, which should follow the specified criteria/td&gt;
+    </tr>
+    </table></p>
+<p>=======
+    <td>The <code>.value</code> hold the probe's expected value, which should follow the specified criteria </td>
+    </tr>
+    </table></p>
+<p>Use the following example to tune this:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>cmd-probe
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">litmuschaos.io/v1alpha1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ChaosEngine</span><span class="w"></span>
 <span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
@@ -3411,7 +3487,14 @@ It supports boolean values. The default value is <code>false</code>.</p>
 <span class="w">          </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
 <span class="w">          </span><span class="nt">retry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
 <span class="w">          </span><span class="nt">initialDelaySeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h4 id="arithmetic-criteria">Arithmetic criteria:<a class="headerlink" href="#arithmetic-criteria" title="Permanent link">&para;</a></h4>
 <p>It is used to compare the numeric values(int,float) for arithmetic comparisons.
 It consists of &gt;, &lt;, &gt;=, &lt;=, ==, != criteria</p>
@@ -3421,8 +3504,26 @@ It consists of &gt;, &lt;, &gt;=, &lt;=, ==, != criteria</p>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;20&quot;</span><span class="w"></span>
 </code></pre></div>
 <h4 id="oneof-criteria">OneOf criteria:<a class="headerlink" href="#oneof-criteria" title="Permanent link">&para;</a></h4>
-<p>It is used to compare numeric or string values, whether actual value lies in expected slice
-Here expected values consist either of int/float/string values</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+It is used to compare numeric or string values, whether actual value lies in expected slice
+Here expected values consist either of int/float/string values
+=======
+It is used to compare numeric or string values, whether actual value lies in expected slice. Here expected values consists either of int/float/string values</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>cmd-probe</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <div class="highlight"><pre><span></span><code><span class="nt">comparator</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">int</span><span class="w"></span>
 <span class="w">  </span><span class="nt">criteria</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;oneOf&quot;</span><span class="w"></span>
@@ -3434,6 +3535,27 @@ Here expected values consist either of int/float/string values</p>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">int</span><span class="w"></span>
 <span class="w">  </span><span class="nt">criteria</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;between&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;[1000,5000]&quot;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="equal-and-notequal-criteria">Equal and NotEqual criteria:<a class="headerlink" href="#equal-and-notequal-criteria" title="Permanent link">&para;</a></h4>
+<p>It is used to compare the string values, it checks whether actual value is equal/notEqual to the expected value or not</p>
+<div class="highlight"><pre><span></span><code><span class="nt">comparator</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">  </span><span class="nt">criteria</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;equal&quot;</span><span class="w"> </span><span class="c1">#equal or notEqual</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;string</span><span class="nv"> </span><span class="s">value&gt;&quot;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="contains-criteria">Contains criteria:<a class="headerlink" href="#contains-criteria" title="Permanent link">&para;</a></h4>
+<p>It is used to compare the string values, it checks whether expected value is sub string of actual value or not</p>
+<div class="highlight"><pre><span></span><code><span class="nt">comparator</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">  </span><span class="nt">criteria</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;contains&quot;</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;string</span><span class="nv"> </span><span class="s">value&gt;&quot;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="matches-and-notmatches-criteria">Matches and NotMatches criteria:<a class="headerlink" href="#matches-and-notmatches-criteria" title="Permanent link">&para;</a></h4>
+<p>It is used to compare the string values, it checks whether the actual value matches/notMatches the regex(provided as expected value) or not</p>
+<div class="highlight"><pre><span></span><code><span class="nt">comparator</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">  </span><span class="nt">criteria</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;matches&quot;</span><span class="w"> </span><span class="c1">#matches or notMatches</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;regex&gt;&quot;</span><span class="w"></span>
 </code></pre></div>
 
 

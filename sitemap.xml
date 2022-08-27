@@ -421,6 +421,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://litmuschaos.github.io/litmus/experiments/concepts/litmus-sdk/litmus-sdk/</loc>
+         <lastmod>2022-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://litmuschaos.github.io/litmus/experiments/concepts/security/kyverno-policies/</loc>
          <lastmod>2022-08-27</lastmod>
          <changefreq>daily</changefreq>

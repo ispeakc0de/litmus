@@ -1,5 +1,3 @@
-## What is Litmus SDK?
-
 The Litmus SDK provides a simple way to bootstrap your experiment and helps create the aforementioned artifacts in the appropriate 
 directory (i.e., as per the chaos-category) based on an attributes file provided as input by the chart-developer. 
 The scaffolded files consist of placeholders which can then be filled as desired.

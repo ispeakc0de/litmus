@@ -3298,34 +3298,41 @@
     <li>Ensure that the Litmus Chaos Operator is running by executing <code>kubectl get pods</code> in operator namespace (typically, <code>litmus</code>).If not, install from <a href="https://v1-docs.litmuschaos.io/docs/getstarted/#install-litmus">here</a> </li>
     <li> Ensure that the <code> spring-boot-memory-stress </code> experiment resource is available in the cluster by executing <code>kubectl get chaosexperiments</code> in the desired namespace. If not, install from <a href="https://hub.litmuschaos.io/api/chaos/master?file=charts/spring-boot/spring-boot-memory-stress/experiment.yaml">here</a></li>
     <li>Chaos Monkey Spring Boot dependency should be present in application. It can be enabled by two ways:
-      <ol><li>Add internal dependency inside the spring boot application
-       <ol><li>Add Chaos Monkey for Spring Boot as dependency for your project
-        <div class="highlight"><pre><span></span><code>&lt;dependency&gt;
+      <ol>
+        <li>Add internal dependency inside the spring boot application
+            <ol>
+                <li>Add Chaos Monkey for Spring Boot as dependency for your project
+                    <div class="highlight"><pre><span></span><code>&lt;dependency&gt;
     &lt;groupId&gt;de.codecentric&lt;/groupId&gt;
     &lt;artifactId&gt;chaos-monkey-spring-boot&lt;/artifactId&gt;
     &lt;version&gt;2.6.1&lt;/version&gt;
 &lt;/dependency&gt;
 </code></pre></div>
-       </li><li> Start your Spring Boot App with the chaos-monkey spring profile enabled
-        <div class="highlight"><pre><span></span><code>java -jar your-app.jar --spring.profiles.active<span class="o">=</span>chaos-monkey --chaos.monkey.enabled<span class="o">=</span><span class="nb">true</span>
+                </li>
+                <li> Start your Spring Boot App with the chaos-monkey spring profile enabled
+                    <div class="highlight"><pre><span></span><code>java -jar your-app.jar --spring.profiles.active<span class="o">=</span>chaos-monkey --chaos.monkey.enabled<span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
-      </li></ol> </li>
-       <li> Add as external dependency
-       <ol><li>You can extend your existing application with the chaos-monkey and add it as an external dependency at startup. For this it is necessary to use the PropertiesLauncher of Spring Boot.
-       <code>maven
-       &lt;dependency&gt;
-            &lt;groupId&gt;de.codecentric&lt;/groupId&gt;
-            &lt;artifactId&gt;chaos-monkey-spring-boot&lt;/artifactId&gt;
-            &lt;classifier&gt;jar-with-dependencies&lt;/classifier&gt;
-            &lt;version&gt;2.6.1&lt;/version&gt;
-       &lt;/dependency&gt;</code>
+                </li>
+            </ol> 
         </li>
-       <li>Start your Spring Boot application, add Chaos Monkey for Spring Boot JAR and properties.
-       <code>bash
-        java -cp your-app.jar -Dloader.path=chaos-monkey-spring-boot-2.6.1-jar-with-dependencies.jar org.springframework.boot.loader.PropertiesLauncher --spring.profiles.active=chaos-monkey --spring.config.location=file:./chaos-monkey.properties</code>
-      </li></ol>
-     </li>
-     </ol>
+        <li> Add as external dependency
+            <ol>
+                <li>You can extend your existing application with the chaos-monkey and add it as an external dependency at startup, for this it is necessary to use the PropertiesLauncher of Spring Boot
+                    <div class="highlight"><pre><span></span><code>&lt;dependency&gt;
+    &lt;groupId&gt;de.codecentric&lt;/groupId&gt;
+    &lt;artifactId&gt;chaos-monkey-spring-boot&lt;/artifactId&gt;
+    &lt;classifier&gt;jar-with-dependencies&lt;/classifier&gt;
+    &lt;version&gt;2.6.1&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre></div>
+                </li>
+                <li>Start your Spring Boot application, add Chaos Monkey for Spring Boot JAR and properties
+                    <div class="highlight"><pre><span></span><code>java -cp your-app.jar -Dloader.path<span class="o">=</span>chaos-monkey-spring-boot-2.6.1-jar-with-dependencies.jar org.springframework.boot.loader.PropertiesLauncher --spring.profiles.active<span class="o">=</span>chaos-monkey --spring.config.location<span class="o">=</span>file:./chaos-monkey.properties
+</code></pre></div>
+                </li>
+            </ol>
+        </li>
+      </ol>
     </li>
 </ul></p>
 </details>

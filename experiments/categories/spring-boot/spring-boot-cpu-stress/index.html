@@ -3300,29 +3300,33 @@
     <li>Chaos Monkey Spring Boot dependency should be present in application. It can be enabled by two ways:
       <ol><li>Add internal dependency inside the spring boot application
        <ol><li>Add Chaos Monkey for Spring Boot as dependency for your project
-        <div class="highlight"><pre><span></span><code>&lt;dependency&gt;
-    &lt;groupId&gt;de.codecentric&lt;/groupId&gt;
-    &lt;artifactId&gt;chaos-monkey-spring-boot&lt;/artifactId&gt;
-    &lt;version&gt;2.6.1&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre></div>
+        <code>
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>chaos-monkey-spring-boot</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+        </code>
        </li><li> Start your Spring Boot App with the chaos-monkey spring profile enabled
-        <div class="highlight"><pre><span></span><code>java -jar your-app.jar --spring.profiles.active<span class="o">=</span>chaos-monkey --chaos.monkey.enabled<span class="o">=</span><span class="nb">true</span>
-</code></pre></div>
+        <code>
+        java -jar your-app.jar --spring.profiles.active=chaos-monkey --chaos.monkey.enabled=true
+        </code>
       </li></ol> </li>
        <li> Add as external dependency
        <ol><li>You can extend your existing application with the chaos-monkey and add it as an external dependency at startup. For this it is necessary to use the PropertiesLauncher of Spring Boot.
-       <code>maven
-       &lt;dependency&gt;
-            &lt;groupId&gt;de.codecentric&lt;/groupId&gt;
-            &lt;artifactId&gt;chaos-monkey-spring-boot&lt;/artifactId&gt;
-            &lt;classifier&gt;jar-with-dependencies&lt;/classifier&gt;
-            &lt;version&gt;2.6.1&lt;/version&gt;
-       &lt;/dependency&gt;</code>
+        <code>
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>chaos-monkey-spring-boot</artifactId>
+            <classifier>jar-with-dependencies</classifier>
+            <version>2.6.1</version>
+        </dependency>
+        </code>
         </li>
        <li>Start your Spring Boot application, add Chaos Monkey for Spring Boot JAR and properties.
-       <code>bash
-        java -cp your-app.jar -Dloader.path=chaos-monkey-spring-boot-2.6.1-jar-with-dependencies.jar org.springframework.boot.loader.PropertiesLauncher --spring.profiles.active=chaos-monkey --spring.config.location=file:./chaos-monkey.properties</code>
+        <code>
+        java -cp your-app.jar -Dloader.path=chaos-monkey-spring-boot-2.6.1-jar-with-dependencies.jar org.springframework.boot.loader.PropertiesLauncher --spring.profiles.active=chaos-monkey --spring.config.location=file:./chaos-monkey.properties
+        </code>
       </li></ol>
      </li>
      </ol>

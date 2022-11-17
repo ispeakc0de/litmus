@@ -3298,17 +3298,17 @@
       </li></ol> </li>
        <li> Add as external dependency
        <ol><li>You can extend your existing application with the chaos-monkey and add it as an external dependency at startup, for this it is necessary to use the PropertiesLauncher of Spring Boot
-       <code>maven
-       &lt;dependency&gt;
-            &lt;groupId&gt;de.codecentric&lt;/groupId&gt;
-            &lt;artifactId&gt;chaos-monkey-spring-boot&lt;/artifactId&gt;
-            &lt;classifier&gt;jar-with-dependencies&lt;/classifier&gt;
-            &lt;version&gt;2.6.1&lt;/version&gt;
-       &lt;/dependency&gt;</code>
+        <div class="highlight"><pre><span></span><code>&lt;dependency&gt;
+    &lt;groupId&gt;de.codecentric&lt;/groupId&gt;
+    &lt;artifactId&gt;chaos-monkey-spring-boot&lt;/artifactId&gt;
+    &lt;classifier&gt;jar-with-dependencies&lt;/classifier&gt;
+    &lt;version&gt;2.6.1&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre></div>
         </li>
        <li>Start your Spring Boot application, add Chaos Monkey for Spring Boot JAR and properties
-       <code>bash
-        java -cp your-app.jar -Dloader.path=chaos-monkey-spring-boot-2.6.1-jar-with-dependencies.jar org.springframework.boot.loader.PropertiesLauncher --spring.profiles.active=chaos-monkey --spring.config.location=file:./chaos-monkey.properties</code>
+        <div class="highlight"><pre><span></span><code>java -cp your-app.jar -Dloader.path<span class="o">=</span>chaos-monkey-spring-boot-2.6.1-jar-with-dependencies.jar org.springframework.boot.loader.PropertiesLauncher --spring.profiles.active<span class="o">=</span>chaos-monkey --spring.config.location<span class="o">=</span>file:./chaos-monkey.properties
+</code></pre></div>
       </li></ol>
      </li>
      </ol>

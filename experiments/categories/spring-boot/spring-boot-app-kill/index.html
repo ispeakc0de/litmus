@@ -3380,20 +3380,25 @@
 <li>Ensure that Kubernetes Version &gt; 1.16 </li>
 <li>Ensure that the Litmus Chaos Operator is running by executing <code>kubectl get pods</code> in operator namespace (typically, <code>litmus</code>).If not, install from <a href="https://v1-docs.litmuschaos.io/docs/getstarted/#install-litmus">here</a></li>
 <li>Ensure that the <code> spring-boot-app-kill </code> experiment resource is available in the cluster by executing <code>kubectl get chaosexperiments</code> in the desired namespace. If not, install from <a href="https://hub.litmuschaos.io/api/chaos/master?file=charts/spring-boot/spring-boot-app-kill/experiment.yaml">here</a></li>
-<li>Chaos Monkey Spring Boot dependency should be present in application. It can be enabled by two ways:<ol>
-<li><em>Add internal dependency inside the spring boot application</em>
-    1.1 Add Chaos Monkey for Spring Boot as dependency for your project
+<li>
+<ol>
+<li>Add internal dependency inside the spring boot application</li>
+<li>Add Chaos Monkey for Spring Boot as dependency for your project
     <div class="highlight"><pre><span></span><code>&lt;dependency&gt;
     &lt;groupId&gt;de.codecentric&lt;/groupId&gt;
     &lt;artifactId&gt;chaos-monkey-spring-boot&lt;/artifactId&gt;
     &lt;version&gt;2.6.1&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre></div>
-    1.2 Start your Spring Boot App with the chaos-monkey spring profile enabled
+</code></pre></div></li>
+<li>Start your Spring Boot App with the chaos-monkey spring profile enabled
     <div class="highlight"><pre><span></span><code>java -jar your-app.jar --spring.profiles.active<span class="o">=</span>chaos-monkey --chaos.monkey.enabled<span class="o">=</span><span class="nb">true</span>
 </code></pre></div></li>
-<li><em>Add as external dependency</em>
-   2.1 You can extend your existing application with the chaos-monkey and add it as an external dependency at startup. For this it is necessary to use the PropertiesLauncher of Spring Boot.
+</ol>
+<p>Chaos Monkey Spring Boot dependency should be present in application. It can be enabled by two ways:</p>
+<ol>
+<li><em>Add as external dependency</em></li>
+</ol>
+<p>2.1 You can extend your existing application with the chaos-monkey and add it as an external dependency at startup. For this it is necessary to use the PropertiesLauncher of Spring Boot.
    <code>maven
     &lt;dependency&gt;
         &lt;groupId&gt;de.codecentric&lt;/groupId&gt;
@@ -3407,8 +3412,7 @@
     -Dloader.path=chaos-monkey-spring-boot-2.6.1-jar-with-dependencies.jar
     org.springframework.boot.loader.PropertiesLauncher
     --spring.profiles.active=chaos-monkey
-    --spring.config.location=file:./chaos-monkey.properties</code></li>
-</ol>
+    --spring.config.location=file:./chaos-monkey.properties</code></p>
 </li>
 </ul>
 </details>

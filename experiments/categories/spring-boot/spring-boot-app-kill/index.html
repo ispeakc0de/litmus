@@ -1203,8 +1203,10 @@
               
   
   
+    
   
-    <li class="md-nav__item">
+  
+    <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
@@ -1342,110 +1344,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Spring Boot App Kill
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Spring Boot App Kill
+    <li class="md-nav__item">
+      <a href="../spring-boot-exceptions/" class="md-nav__link">
+        Spring Boot Exceptions
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#uses" class="md-nav__link">
-    Uses
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-validations" class="md-nav__link">
-    Default Validations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#minimal-rbac-configuration-example-optional" class="md-nav__link">
-    Minimal RBAC configuration example (optional)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#experiment-tunables" class="md-nav__link">
-    Experiment tunables
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#experiment-examples" class="md-nav__link">
-    Experiment Examples
-  </a>
-  
-    <nav class="md-nav" aria-label="Experiment Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#common-experiment-tunables" class="md-nav__link">
-    Common Experiment Tunables
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spring-boot-application-port" class="md-nav__link">
-    Spring Boot Application Port
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3394,7 +3297,7 @@
 </code></pre></div>
       </li></ol> </li>
        <li> Add as external dependency
-       <ol><li>You can extend your existing application with the chaos-monkey and add it as an external dependency at startup. For this it is necessary to use the PropertiesLauncher of Spring Boot.
+       <ol><li>You can extend your existing application with the chaos-monkey and add it as an external dependency at startup, for this it is necessary to use the PropertiesLauncher of Spring Boot
        <code>maven
        &lt;dependency&gt;
             &lt;groupId&gt;de.codecentric&lt;/groupId&gt;
@@ -3403,7 +3306,7 @@
             &lt;version&gt;2.6.1&lt;/version&gt;
        &lt;/dependency&gt;</code>
         </li>
-       <li>Start your Spring Boot application, add Chaos Monkey for Spring Boot JAR and properties.
+       <li>Start your Spring Boot application, add Chaos Monkey for Spring Boot JAR and properties
        <code>bash
         java -cp your-app.jar -Dloader.path=chaos-monkey-spring-boot-2.6.1-jar-with-dependencies.jar org.springframework.boot.loader.PropertiesLauncher --spring.profiles.active=chaos-monkey --spring.config.location=file:./chaos-monkey.properties</code>
       </li></ol>
@@ -3609,7 +3512,7 @@ Use this sample RBAC manifest to create a chaosServiceAccount in the desired (ap
         <!-- Link to previous page -->
         
         <a
-            href="../spring-boot-memory-stress/"
+            href="../../cassandra/cassandra-pod-delete/"
             class="md-footer__link md-footer__link--prev"
             rel="prev"
         >
@@ -3621,7 +3524,7 @@ Use this sample RBAC manifest to create a chaosServiceAccount in the desired (ap
                 <span class="md-footer__direction">
                 Previous
                 </span>
-                Spring Boot Memory Stress
+                Cassandra Pod Delete
             </div>
             </div>
         </a>
@@ -3630,7 +3533,7 @@ Use this sample RBAC manifest to create a chaosServiceAccount in the desired (ap
         <!-- Link to next page -->
         
         <a
-            href="../spring-boot-latency/"
+            href="../spring-boot-cpu-stress/"
             class="md-footer__link md-footer__link--next"
             rel="next"
         >
@@ -3639,7 +3542,7 @@ Use this sample RBAC manifest to create a chaosServiceAccount in the desired (ap
                 <span class="md-footer__direction">
                 Next
                 </span>
-                Spring Boot Latency
+                Spring Boot CPU Stress
             </div>
             </div>
             <div class="md-footer__button md-icon">

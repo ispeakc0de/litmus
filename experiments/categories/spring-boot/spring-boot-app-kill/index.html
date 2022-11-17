@@ -3389,12 +3389,11 @@
     &lt;version&gt;2.6.1&lt;/version&gt;
 &lt;/dependency&gt;
 </code></pre></div>
-       </li><li>
-      - Start your Spring Boot App with the chaos-monkey spring profile enabled
+       </li><li> Start your Spring Boot App with the chaos-monkey spring profile enabled
         <div class="highlight"><pre><span></span><code>java -jar your-app.jar --spring.profiles.active<span class="o">=</span>chaos-monkey --chaos.monkey.enabled<span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
-      </li>
-      <li> Add as external dependency
+      </li></ol> </li>
+       <li> Add as external dependency
        <ol><li>You can extend your existing application with the chaos-monkey and add it as an external dependency at startup. For this it is necessary to use the PropertiesLauncher of Spring Boot.
        <code>maven
         &lt;dependency&gt;

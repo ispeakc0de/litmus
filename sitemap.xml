@@ -281,6 +281,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://litmuschaos.github.io/litmus/experiments/categories/spring-boot/spring-boot-faults/</loc>
+         <lastmod>2022-11-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://litmuschaos.github.io/litmus/experiments/categories/spring-boot/spring-boot-latency/</loc>
          <lastmod>2022-11-18</lastmod>
          <changefreq>daily</changefreq>
